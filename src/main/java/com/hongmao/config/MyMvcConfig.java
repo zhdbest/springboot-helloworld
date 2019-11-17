@@ -13,7 +13,8 @@ public class MyMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        // 请求 /hongmao 路径时会返回 success 页面
-        registry.addViewController("/hongmao").setViewName("success");
+        // 默认访问的首页是 login 页面
+        registry.addViewController("").setViewName("login");
+        registry.addViewController("index.html").setViewName("login");
     }
 }
